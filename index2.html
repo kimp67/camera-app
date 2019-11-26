@@ -18,8 +18,8 @@
 <body>
     <!-- Div to show the scanner -->
     <div id="scanner-container"></div>
-    <input type="button" id="btn" value="Start/Stop the scanner" style="display:block;"/>
-    <textarea id="outwrite" rows='5' cols='100' ></textarea>
+    <div><input type="button" id="btn" value="Start/Stop the scanner" /><input type="button" id="btnClr" value="지우기"/></div>
+    <div><textarea id="outwrite" rows='5' cols='100' ></textarea></div>
 
     <!-- Include the image-diff library -->
     <script src="quagga.min.js"></script> 
@@ -124,6 +124,10 @@
                 startScanner();
             }
         }, false);
+        document.getElementById("btnClr").addEventListener("click", function(){
+              txtout="";
+              document.getElementById("outwrite").value = txtout;
+        });
     </script>
 </body>
 
