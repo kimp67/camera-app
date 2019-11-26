@@ -113,12 +113,12 @@
                 if( code in dicObj) {
                     dicObj[code] = dicObj[code] + 1;   
                 } else {
-                    docObj[code] = 1;
+                    dicObj[code] = 1;
                 }
                 txtout = "";
                 var i = 1;
                 for(var key in dicObj) {
-                    txtout = txtout + i + ". Barcode detected and processed : [ " + key + " ] [ " + dicObj[key] + " ]\n";
+                    txtout = txtout + i++ + ". Barcode detected and processed : [ " + key + " ] [ " + dicObj[key] + " ]\n";
                 }
                // txtout = txtout + "Barcode detected and processed : [" + result.codeResult.code + "]\n";
                 document.getElementById("outwrite").value = txtout;
