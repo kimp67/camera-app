@@ -137,6 +137,9 @@
         }, false);
         document.getElementById("btnClr").addEventListener("click", function(){
               txtout="";
+               for(var key in dicObj) {
+                   delete dicObj[key];
+               }
               document.getElementById("outwrite").value = txtout;
         });
     </script>
