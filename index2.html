@@ -27,7 +27,8 @@
 
     <script>
         var _scannerIsRunning = false;
-
+        var txtout = "";
+        
         function startScanner() {
             Quagga.init({
                 inputStream: {
@@ -107,7 +108,7 @@
 
 
             Quagga.onDetected(function (result) {
-                var txtout = "";
+             
                 txtout = txtout + "Barcode detected and processed : [" + result.codeResult.code + "]\n";
                 document.getElementById("outwrite").value = txtout;
                 console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
