@@ -120,7 +120,7 @@
                 txtout = "";
                 var i = 1;
                 for(var key in items) {
-                    txtout = txtout + i++ + ". Barcode detected and processed : [ " + key + " ] [ " + items[key] + " ]\n";
+                    txtout = txtout + i++ + ". Barcode detected and processed : [ " + key + " ] [ " + items[key][0] + " ] [ " + items[key][1] + "]\n";
                 }
                // txtout = txtout + "Barcode detected and processed : [" + result.codeResult.code + "]\n";
                 document.getElementById("outwrite").value = txtout;
