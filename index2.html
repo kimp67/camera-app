@@ -115,10 +115,12 @@
                 } else {
                     dicObj[code] = 1;
                 }
+                var items = Object.keys(dicObj).map(function(key){ return [key, dicObj[key]]; });
+                items.sort(function(first, second) { return second[1] - first[1]; });
                 txtout = "";
                 var i = 1;
-                for(var key in dicObj) {
-                    txtout = txtout + i++ + ". Barcode detected and processed : [ " + key + " ] [ " + dicObj[key] + " ]\n";
+                for(var key in items) {
+                    txtout = txtout + i++ + ". Barcode detected and processed : [ " + key + " ] [ " + items[key] + " ]\n";
                 }
                // txtout = txtout + "Barcode detected and processed : [" + result.codeResult.code + "]\n";
                 document.getElementById("outwrite").value = txtout;
