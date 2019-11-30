@@ -13,11 +13,11 @@
             top: 0;
         }
     </style>
-    <audio id='audio_play' src='./ding.pm3'></audio>
+    <audio id='audio_play' src='ding.pm3'></audio>
     <script type="text/javascript">
         function play() {
             var audio = document.getElementById('audio_play');
-            if(audio.paused()) {
+            if(audio.paused) {
                 audio.play();
             } else {
                 audio.pause();
