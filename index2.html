@@ -15,6 +15,8 @@
     </style>
     <audio id='audio_play' src='ding.pm3' crossOrigin="anonymous"></audio>
     <script type="text/javascript">
+        var snd = new Audio("ding.mp3");
+        
         function play() {
             var audio = document.getElementById('audio_play');
             if(audio.paused) {
@@ -127,7 +129,7 @@
                 } else {
                     dicObj[code] = 1;
                 }
-                play();
+                snd.play();
                 var items = Object.keys(dicObj).map(function(key){ return [key, dicObj[key]]; });
                 items.sort(function(first, second) { return second[1] - first[1]; });
                 txtout = "";
