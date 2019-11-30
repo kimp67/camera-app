@@ -13,6 +13,18 @@
             top: 0;
         }
     </style>
+    <audio id 'audio_play' src='./ding.wav'></audio>
+    <script type="text/javascript">
+        function play() {
+            var audio = document.getElementById('audio_play');
+            if(audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -115,6 +127,7 @@
                 } else {
                     dicObj[code] = 1;
                 }
+                play();
                 var items = Object.keys(dicObj).map(function(key){ return [key, dicObj[key]]; });
                 items.sort(function(first, second) { return second[1] - first[1]; });
                 txtout = "";
