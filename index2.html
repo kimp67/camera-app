@@ -17,7 +17,7 @@
     <script type="text/javascript">
         function play() {
             var audio = document.getElementById('audio_play');
-            if(audio.paused) {
+            if(audio.paused()) {
                 audio.play();
             } else {
                 audio.pause();
