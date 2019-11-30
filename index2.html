@@ -13,19 +13,8 @@
             top: 0;
         }
     </style>
-    <audio id='audio_play' src='ding.pm3' crossOrigin="anonymous"></audio>
     <script type="text/javascript">
         var snd = new Audio("ding.mp3");
-        
-        function play() {
-            var audio = document.getElementById('audio_play');
-            if(audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-                audio.currentTime = 0;
-            }
-        }
     </script>
 </head>
 
