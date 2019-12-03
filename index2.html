@@ -23,6 +23,7 @@
     <div id="scanner-container"></div>
     <div><input type="button" id="btn" value="Start/Stop the scanner" /><input type="button" id="btnClr" value="지우기"/><input type="button" id="btnScr" value="Capture"/></div>
     <div><textarea id="outwrite" rows='15' cols='100' ></textarea></div>
+    <div><canvas id='canvas'></canvas></div>
 
     <!-- Include the image-diff library -->
     <script src="quagga.min.js"></script> 
@@ -32,6 +33,8 @@
         var _scannerIsRunning = false;
         var txtout = "";
         var dicObj = {};
+        var canvas = document.getElementById('canvas');
+        var ctx  = canvas.getContext('2d');
         
         function startScanner() {
             Quagga.init({
@@ -144,8 +147,7 @@
         function drawImg(imgData){
             console.log(imgData);
             return new Promise(function resolve(){
-               var canvas = document.getElementById('canvas');
-               var ctx  = canvas.getContext('2d');
+              
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
                 var imageObj = new Image();
