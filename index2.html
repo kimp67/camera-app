@@ -137,7 +137,7 @@
         }
 
         function ScrShot() {
-         html2canvas(document.getElementById('scanner-container'))
+         html2canvas(document.getElementById("scanner-container"))
          .then(function(canvas) {
              drawImg(canvas.toDataURL('image/jpeg'));
              saveAs(canvas.toDataURL(), 'screen.jpg');
