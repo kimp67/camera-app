@@ -130,8 +130,13 @@
                     dicObj[code] = 1;
                 }
                 if(enableVibrate) {
-                    window.navigator.vibrate(300);
-                    console.log("Vabrate !");
+                    if('vibrate' in navigator) {
+                       navigator.vibrate(300);
+                       console.log("Vabrate !");
+                    }else {
+                      snd.play(); 
+                      console.log("Sound 2 !");  
+                    }
                 }else {
                     snd.play();
                     console.log("Sound !");
